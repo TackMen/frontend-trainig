@@ -1,0 +1,41 @@
+@use "../globals" as *;
+@use "../parts/common" as *;
+
+.cg-detail {
+    padding-top: 150px;
+    @extend .mb-lg;
+    @extend .content-width;
+    text-align: center;
+    
+    &__inner {
+        width: 100%;
+    }
+
+    &__main-title {
+        @extend .mb-lg;
+        @extend .main-title;
+        background-color: teal;
+        color: white;
+        padding: 20px;
+    }
+
+
+    &__item {
+        @extend .mb-lg;
+
+        &__title {
+            @extend .font-lg;
+            @extend .mb-sm;
+        }
+
+        &__text {
+            @extend .font-text;
+            // font-size: 18px;
+        }
+    }
+
+}
+
+.cover-slide {
+    @extend .mb-sm;
+}

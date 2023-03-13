@@ -1,0 +1,112 @@
+@use "../globals" as *;
+
+body {
+    font-family: 'Kameron', serif;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.font-sm {
+    font-size: 14px;
+
+    @include mq(lg) {
+        font-size: 16px;
+    }
+}
+.font-md {
+    font-size: 17px;
+
+    @include mq(lg) {
+        font-size: 19px;
+    }
+}
+.font-lr {
+    font-size: 17px;
+
+    @include mq(lg) {
+        font-size: 23px;
+    }
+}
+.font-lg {
+    font-size: 25px;
+
+    @include mq(lg) {
+        font-size: 36px;
+    }
+}
+.font-text {
+    font-size: 20px;
+
+    @include mq(lg) {
+        font-size: 30px;
+    }
+}
+
+.main-title {
+    @extend .font-lg;
+    font-weight: 600;
+    margin-bottom: 0;
+    display: block;
+}
+
+.sub-title {
+    @extend .font-sm;
+    color: $cWhite;
+
+}
+
+.content-width {
+    width: 90%;
+    margin: 0 auto;
+    max-width: $contentMaxWidth;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+
+    @include mq(md) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.m-el {
+    margin: 12px auto;
+
+      @include mq(md) {
+        margin: 50px auto;
+      }
+      @include mq(lg) {
+        margin: 80px auto;
+      }
+}
+
+// .mt-sm {
+//     margin
+// }
+
+.mb-sm {
+    margin-bottom: 16px !important;
+    @include mq(lg) {
+        margin-bottom: 22px;
+    }
+}
+
+.mb-lg {
+    margin-bottom: 80px !important;
+
+    @include mq(lg) {
+        margin-bottom: 150px !important;
+    }
+}
+
+.pb-sm {
+    padding-bottom: 16px !important;
+}
+.pb-lg {
+    padding-bottom: 80px !important;
+
+    @include mq(lg) {
+        padding-bottom: 150px !important;
+    }
+}

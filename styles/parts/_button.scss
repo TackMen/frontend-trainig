@@ -1,0 +1,91 @@
+@use "../globals" as *;
+
+.btn {
+    position: relative;
+    display: inline-block;
+    background-color: $cWhite;
+    color: $cBlack;
+    font-weight: 800;
+    padding: 10px 40px;
+    margin: 30px auto;
+    cursor: pointer;
+    text-decoration: none !important;
+      // box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+
+    &.filled{
+      background-color: $cBlack;
+      color: $cWhite;
+      box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+
+      
+      &:hover {
+      background-color: $cWhite;
+      color: $cBlack;
+      box-shadow: none;
+    }
+  }
+
+    &.slide-bg {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+  
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-color: $cBlack;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+        z-index: -1;
+      }
+  
+      &:hover {
+        color: $cWhite;
+  
+        &::before {
+          transform: none;
+        }
+      }
+    }
+
+    &.cover-3d {
+      position: relative;
+      z-index: 1;
+      transform-style: preserve-3d;
+      perspective: 300px;
+  
+      & span {
+        display: inline-block;
+        transform: translateZ(20px);
+      }
+  
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background-color: $cBlack;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: rotateX(90deg);
+        transition: all 0.3s;
+        transform-origin: top center;
+        opacity: 0;
+      }
+  
+      &:hover {
+        color: $cWhite;
+  
+        &::before {
+          transform: none;
+          opacity: 1;
+        }
+      }
+    }
+  }    

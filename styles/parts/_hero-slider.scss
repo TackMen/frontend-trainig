@@ -1,0 +1,51 @@
+@use "../globals" as *;
+
+.swiper {
+  overflow: visible !important;
+}
+
+
+.swiper-slide {
+  height: 500px;
+  overflow: hidden;
+
+  @include mq(lg) {
+    box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+  }
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    transform: scale(1.3);
+    transition: transform 1.9s ease;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 61, 125, 0.1);
+  }
+
+  &-active {
+    & > img {
+      transform: none;
+    }
+
+    & .slider__text {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    
+  }
+}
+
+
+
+
